@@ -95,9 +95,9 @@ app.use("/smartbin", require("./routes/smartbin"));
 app.use("/gasmonitor", require("./routes/gasMonitor"));
 app.use("/bms", require("./routes/bms"));
 
+app.post("/setswitchstate", SetSwitchState);
 app.use(verifyJWT);
 // app.use("/switch", require("./routes/switch"));
-app.post("/setswitchstate", SetSwitchState);
 
 mongoose.connection.once("open", () => {
   console.log("Successfully connected to mongodb");

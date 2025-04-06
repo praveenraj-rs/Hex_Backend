@@ -26,7 +26,7 @@ const GetSwitchStatesValues = async (username) => {
 // SetSwitchState
 const SetSwitchState = async (req, res) => {
   // const username = req.query.username; // without JWT verification
-  const username = req.username; // with JWT verification
+  const username = req.body.username; // with JWT verification
   const switchID = req.body.switchID;
 
   const foundUser = await User.findOne({ username: username });
